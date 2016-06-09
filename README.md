@@ -1,2 +1,3 @@
-# component-loader
-PHP Autoloader class (PSR-4)
+# Loader Component
+
+PSR-4 Loader complient
