@@ -40,7 +40,7 @@ return %s;
 
 CACHE;
         $content = sprintf($content, var_export($maps, true));
-        $written  = (bool) file_put_contents($cacheFile, $content);
+        $written = (bool) file_put_contents($cacheFile, $content);
 
         if (!$written) {
             throw new \RuntimeException('No content has been written in cache class map file !');
@@ -96,7 +96,7 @@ CACHE;
      *
      * @param  string $path The file to check
      * @throws \RuntimeException
-     * @return array             The found classes
+     * @return array The found classes
      */
     private static function findClasses($path)
     {
@@ -152,16 +152,12 @@ CACHE;
             $contents = substr($contents, 0, $pos);
         }
 
-        preg_match_all(
-            '{
+        preg_match_all('{
             (?:
                  \b(?<![\$:>])(?P<type>class|interface' . $extraTypes . ') \s++ (?P<name>[a-zA-Z_\x7f-\xff:][a-zA-Z0-9_\x7f-\xff:\-]*+)
                | \b(?<![\$:>])(?P<ns>namespace) (?P<nsname>\s++[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*+(?:\s*+\\\\\s*+[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*+)*+)? \s*+ [\{;]
             )
-            }ix',
-            $contents,
-            $matches
-        );
+            }ix', $contents, $matches);
 
         $classes   = array();
         $namespace = '';

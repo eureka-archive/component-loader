@@ -17,7 +17,6 @@ use Eureka\Eurekon\Out;
  * Loader cache generator.
  *
  * @author  Romain Cottard
- * @version 2.0.0
  */
 class Generator extends Eurekon\Console
 {
@@ -48,8 +47,6 @@ class Generator extends Eurekon\Console
         Out::std('');
 
         $help = new Eurekon\Help('...', true);
-        $help->addArgument('p', 'password', 'Password to hash. If empty, generate on', true, false);
-        $help->addArgument('l', 'length', 'Length for password generated (default 16 chars)', true, false);
 
         $help->display();
     }

@@ -14,7 +14,6 @@ namespace Eureka\Component\Loader;
  * Inspired from http://www.php-fig.org/psr/psr-4/examples/
  *
  * @author  Romain Cottard
- * @version 1.0.0
  * @see     http://www.php-fig.org/psr/psr-4/
  */
 class Loader
@@ -130,7 +129,7 @@ class Loader
     /**
      * Require once the specified file.
      *
-     * @param string $file
+     * @param  string $file
      * @return string
      */
     protected function requireFile($file)
@@ -145,7 +144,7 @@ class Loader
      *
      * @param  string $namespace
      * @param  string $path
-     * @return $this
+     * @return self
      *
      */
     public function addNamespace($namespace, $path)
@@ -166,7 +165,7 @@ class Loader
      * Add namespaces from config data
      *
      * @param  array $config
-     * @return $this
+     * @return self
      */
     public function addFromConfig($config)
     {
@@ -190,9 +189,9 @@ class Loader
     /**
      * Register autoload class method.
      *
-     * @param  boolean $throw
-     * @param  boolean $prepend
-     * @return boolean
+     * @param  bool $throw
+     * @param  bool $prepend
+     * @return bool
      */
     public function register($throw = true, $prepend = false)
     {
@@ -202,7 +201,7 @@ class Loader
     /**
      * Unregister autoload class method.
      *
-     * @return boolean
+     * @return bool
      */
     public function unregister()
     {
